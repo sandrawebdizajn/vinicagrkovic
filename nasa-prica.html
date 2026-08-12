@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Прича породице Грковић | Виница Грковић</title>
+<meta name="description" content="Три и по века породичне традиције у справљању вина, од метохијског виногорја до подрума у Нишу.">
+<link rel="canonical" href="https://vinicagrkovic.rs/">
+<meta property="og:title" content="Виница Грковић | Подрум вина у Нишу">
+<meta property="og:description" content="Породични подрум вина са три и по века традиције, из Доње Врежине у Нишу.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{margin:0;background:#F4EEE4;color:#262321;font-family:'Golos Text',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#6E2634;text-decoration:none}
+  a:hover{color:#5A1E2A}
+  img{max-width:100%;display:block}
+  button{font-family:inherit}
+  :focus-visible{outline:2px solid #6E2634;outline-offset:3px}
+  .vgm-photo img{transition:transform 1.2s cubic-bezier(.22,1,.36,1);width:100%;height:100%;object-fit:cover}
+  .vgm-photo:hover img{transform:scale(1.04)}
+  .vgm-nav{color:#262321;white-space:nowrap;padding:9px 14px;border-radius:100px;transition:background .25s ease,color .25s ease}
+  .vgm-nav:hover{background:#6E2634;color:#F4EEE4}
+  .vgm-cta{white-space:nowrap;transition:background .3s ease,transform .3s ease}
+  .vgm-cta:hover{background:#5A1E2A;transform:translateY(-2px)}
+  .vgm-rise{transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+  h1,h2,h3,h4,figcaption,blockquote{text-wrap:balance}
+  p,li,dd,summary{text-wrap:pretty}
+  .vgm-mob{display:none}
+  .vg-dip{display:none}
+  .vg-dip.is-open{display:flex}
+  @media (max-width:1060px){.vgm-desk{display:none !important}.vgm-mob{display:inline-flex}.vgm-bar{display:grid !important}footer{padding-bottom:60px}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms !important}}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:800;background:rgba(244,238,228,0.9);backdrop-filter:blur(10px)">
+  <div style="max-width:1300px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap">
+      <img src="assets/logo-vinica-grkovic.png" alt="Виница Грковић лого" width="34" height="46" style="height:46px;width:auto">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:#262321;letter-spacing:.01em">Виница Грковић</span>
+    </a>
+    <nav class="vgm-desk" aria-label="Главна навигација" style="display:flex;align-items:center;gap:4px">
+      <a href="nasa-prica.html" class="vgm-nav" style="font-size:15px">Наша прича</a>
+      <a href="Varijanta B - Metohija.dc.html#vina" class="vgm-nav" style="font-size:15px">Вина</a>
+      <a href="galerija.html" class="vgm-nav" style="font-size:15px">Галерија</a>
+      <a href="Varijanta B - Metohija.dc.html#utisci" class="vgm-nav" style="font-size:15px">Утисци</a>
+      <a href="Varijanta B - Metohija.dc.html#kontakt" class="vgm-nav" style="font-size:15px">Контакт</a>
+      <div data-nolang="" role="group" aria-label="Language" style="display:flex;margin-left:10px;border:1px solid rgba(38,35,33,0.2);border-radius:100px;overflow:hidden;flex-shrink:0">
+        <button type="button" data-lang="cyr" onClick="{{ pickLang }}" style="padding:9px 12px;min-height:38px;border:0;background:transparent;color:#262321;font-size:12.5px;font-weight:600;cursor:pointer">ЋИР</button>
+        <button type="button" data-lang="lat" onClick="{{ pickLang }}" style="padding:9px 12px;min-height:38px;border:0;border-left:1px solid rgba(38,35,33,0.15);background:transparent;color:#262321;font-size:12.5px;font-weight:600;cursor:pointer">LAT</button>
+        <button type="button" data-lang="en" onClick="{{ pickLang }}" style="padding:9px 12px;min-height:38px;border:0;border-left:1px solid rgba(38,35,33,0.15);background:transparent;color:#262321;font-size:12.5px;font-weight:600;cursor:pointer">EN</button>
+      </div>
+      <a href="tel:+381642619360" class="vgm-cta" style="margin-left:12px;display:inline-flex;align-items:center;gap:8px;background:#6E2634;color:#F4EEE4;padding:12px 24px;border-radius:100px;font-size:15px;font-weight:600;min-height:44px">Позовите нас</a>
+    </nav>
+    <a href="tel:+381642619360" class="vgm-mob vgm-cta" style="align-items:center;background:#6E2634;color:#F4EEE4;padding:12px 22px;border-radius:100px;font-size:15px;font-weight:600;min-height:44px">Позовите</a>
+  </div>
+</header>
+
+<main id="vrh">
+  <section aria-label="Наслов" style="position:relative;min-height:min(56vh,460px);display:flex;align-items:flex-end;overflow:hidden">
+    <img src="assets/vinica-grkovic-berba-orahovac.jpg" alt="Берба грожђа у Ораховцу" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,35,33,0.45),rgba(38,35,33,0.2) 40%,rgba(38,35,33,0.85))"></span>
+    <div style="position:relative;max-width:1300px;margin:0 auto;padding:0 clamp(20px,5vw,40px) clamp(36px,5vw,64px);width:100%">
+      <span style="display:block;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#E4D5BE;margin-bottom:18px">Наша прича</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,7vw,86px);line-height:.98;margin:0;color:#FFFFFF">Прича породице<br>Грковић</h1>
+    </div>
+  </section>
+
+  <section aria-labelledby="p-uvod" style="padding:clamp(48px,7vw,90px) 0">
+    <div style="max-width:1300px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,6vw,72px);align-items:center">
+      <div>
+        <h2 id="p-uvod" style="font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.06;color:#262321;margin:0;font-size:clamp(30px,4.2vw,50px);margin-bottom:26px">Три и по века<br>породичне традиције</h2>
+        <p style="font-size:18px;line-height:1.85;color:#4A453F;max-width:52ch;margin:0 0 20px">Фамилија Грковић је од свог родоначелника, који се на просторе Метохије доселио из Грчке, наследила љубав према гајењу винове лозе и справљању вина.</p>
+        <p style="font-size:18px;line-height:1.85;color:#4A453F;max-width:52ch;margin:0">Од тих давних времена па све до данас, већ три и по века траје прича о традицији фамилије Грковић у справљању врхунских вина и ракије.</p>
+      </div>
+      <div class="vgm-photo" style="aspect-ratio:4/5;max-height:540px;overflow:hidden;border-radius:4px">
+        <img src="assets/vinica-grkovic-deca-medju-lozom.jpg" alt="Деца међу чокотима винове лозе у винограду" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <section aria-label="Наставак приче" style="padding:clamp(48px,7vw,90px) 0;background:#351E24">
+    <div style="max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,40px);columns:2 380px;column-gap:clamp(32px,5vw,60px)">
+      <p style="font-size:18.5px;line-height:1.9;color:rgba(244,238,228,0.85);margin:0 0 22px">Осунчане падине метохијског виногорја и плодна метохијска земља, уз велико знање, преданост и љубав према овом пићу Богова, савршен су спој који за резултат има вина која пружају уживање у свакој капљици.</p>
+      <p style="font-size:18.5px;line-height:1.9;color:rgba(244,238,228,0.85);margin:0 0 22px">„Виница Грковић” настала на овим темељима и вишевековној традицији већ више од три деценије испунава мисију да кроз своја висококвалитетна вина пружи свима моменте уживања и буде део мноштва лепих тренутака у животима многих породица.</p>
+      <p style="font-size:18.5px;line-height:1.9;color:rgba(244,238,228,0.85);margin:0 0 22px">Препознатљивост и особеност „Винице Грковић” су вина справљана икључиво од врхунских сорти грожђа, без адитива и вештачких додатака и представљају плод природе, технологије, љубави и хармоније сједињених у њима, те поред изузетног ужитка пружају и добро знана благотворна дејства на здравље.</p>
+      <p style="font-size:18.5px;line-height:1.9;color:rgba(244,238,228,0.85);margin:0 0 22px">Због познатих догађаја 1999. године на Косову и Метохији, „Виница Грковић” је морала да свој рад једним делом премести у Ниш, али ће печат и дух времена и простора са којих је потекла заувек остати сачувани у винима и ракијама.</p>
+      <p style="font-size:18.5px;line-height:1.9;color:rgba(244,238,228,0.85);margin:0">Преко три века живота које су генерације фамилије Грковић проживеле у сунчаној Метохији исплела су нераскидиву нит са овим просторима која се као предање чува и негује кроз врхунска вина.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="p-video" style="background:#E4D5BE;padding:clamp(48px,7vw,90px) 0">
+    <div style="max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
+      <span style="display:block;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#6E2634;margin-bottom:18px">Видео</span>
+      <h2 id="p-video" style="font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.06;margin:0;font-size:clamp(28px,3.6vw,44px);margin-bottom:28px;color:#262321">Виница Грковић у слици и речи</h2>
+      <div style="position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#351E24">
+        <iframe src="https://www.youtube-nocookie.com/embed/HwUUSlHMPMg" title="Видео о Виници Грковић" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="p-priznanja" style="padding:clamp(48px,7vw,90px) 0">
+    <div style="max-width:1300px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,64px);align-items:center">
+      <div>
+        <span style="display:block;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#6E2634;margin-bottom:18px">Признања</span>
+        <h2 id="p-priznanja" style="font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.06;color:#262321;margin:0;font-size:clamp(28px,3.8vw,46px);margin-bottom:22px">Дипломе из архиве подрума</h2>
+        <p style="font-size:17px;line-height:1.8;color:#4A453F;max-width:46ch;margin:0">Оригинални документи чувају се у подруму и представљају део породичне архиве.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px">
+        <figure class="vgm-photo" style="margin:0">
+          <button type="button" data-dip="0" onClick="{{ openDip }}" aria-label="Отвори диплому за Вранац 2002 у пуној величини" style="display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;border-radius:4px;overflow:hidden">
+            <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img src="assets/vinica-grkovic-diploma-vranac-2002.jpg" alt="Диплома за Вранац из 2002. године" loading="lazy"></span>
+          </button>
+          <figcaption style="font-size:13px;color:#6C7151;padding-top:12px">Вранац · 2002</figcaption>
+        </figure>
+        <figure class="vgm-photo" style="margin:0">
+          <button type="button" data-dip="1" onClick="{{ openDip }}" aria-label="Отвори диплому за Пино Ноар 2003 у пуној величини" style="display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;border-radius:4px;overflow:hidden">
+            <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img src="assets/vinica-grkovic-diploma-pinot-noir-2003.jpg" alt="Диплома за Пино Ноар из 2003. године" loading="lazy"></span>
+          </button>
+          <figcaption style="font-size:13px;color:#6C7151;padding-top:12px">Пино Ноар · 2003</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Позив" style="background:#351E24;color:#F4EEE4;padding:clamp(48px,7vw,90px) 0">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4.4vw,52px);line-height:1.08;margin:0 0 20px;color:#FFFFFF">Позовите подрум</h2>
+      <p style="font-size:17.5px;line-height:1.75;color:rgba(244,238,228,0.85);max-width:48ch;margin:0 auto 32px">Доступност, паковања и цене потврђујемо телефоном, пре доласка или поручивања.</p>
+      <a href="tel:+381642619360" class="vgm-cta" style="display:inline-flex;align-items:center;gap:10px;background:#6E2634;color:#F4EEE4;padding:18px 36px;border-radius:100px;font-size:17px;font-weight:600;min-height:56px">+381 64 261 9360</a>
+    </div>
+  </section>
+</main>
+
+<div class="vgm-bar" style="position:fixed;bottom:0;left:0;right:0;z-index:790;display:none;grid-template-columns:1fr 1fr;gap:1px;background:rgba(38,35,33,0.14)">
+  <a href="tel:+381642619360" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#6E2634;color:#F4EEE4;padding:15px;font-size:15px;font-weight:600;min-height:52px">Позовите</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Vinica%20Grkovi%C4%87%20Ratka%20Pavlovi%C4%87a%20124%20Ni%C5%A1" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#F4EEE4;color:#262321;padding:15px;font-size:15px;font-weight:600;min-height:52px">Локација</a>
+</div>
+
+<footer style="background:#351E24;color:rgba(244,238,228,0.75)">
+  <div style="max-width:1300px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#F4EEE4">Виница Грковић</span>
+    <span style="font-size:14px">Ратка Павловића 124, Доња Врежина, Ниш · <a href="tel:+381642619360" style="color:#E4D5BE">+381 64 261 9360</a></span>
+    <span style="font-size:12.5px;color:rgba(244,238,228,0.5)">© 2026 · Само за пунолетна лица</span>
+  </div>
+</footer>
+
+<div class="vg-dip" role="dialog" aria-modal="true" aria-label="Приказ дипломе" style="position:fixed;inset:0;z-index:2000;align-items:center;justify-content:center;background:rgba(29,16,20,0.94);padding:clamp(16px,4vw,48px)" onClick="{{ closeDip }}">
+  <button type="button" onClick="{{ closeDip }}" aria-label="Затвори" style="position:absolute;top:20px;right:20px;width:48px;height:48px;background:rgba(244,238,228,0.12);border:1px solid rgba(244,238,228,0.3);border-radius:5px;color:#F4EEE4;cursor:pointer;display:flex;align-items:center;justify-content:center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:100%" onClick="{{ stopDip }}">
+    <div role="img" aria-label="{{ dipAlt }}" style="width:min(88vw,760px);height:78vh;background-image:{{ dipBg }};background-size:contain;background-repeat:no-repeat;background-position:center;border-radius:4px"></div>
+    <span style="font-size:14px;color:#E4D5BE;text-align:center;max-width:60ch">{{ dipAlt }}</span>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Winery", "LocalBusiness"],
+  "name": "Виница Грковић - подрум вина",
+  "description": "Породични подрум вина са три и по века традиције, из Доње Врежине у Нишу.",
+  "url": "https://vinicagrkovic.rs/",
+  "telephone": "+381642619360",
+  "email": "vinicagrkovic@gmail.com",
+  "areaServed": { "@type": "City", "name": "Ниш" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ратка Павловића 124",
+    "addressLocality": "Доња Врежина, Ниш",
+    "addressCountry": "RS"
+  },
+  "sameAs": [
+    "https://www.facebook.com/vinicagrkovic/",
+    "https://www.instagram.com/vinica_grkovic/"
+  ]
+}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (function () { try { return localStorage.getItem('vg-lang') || 'cyr'; } catch (e) { return 'cyr'; } })() };
+
+  EN = {
+    "Од Метохије до Ниша": "From Metohija to Niš",
+    "Вино које": "Wine that",
+    "памти род": "remembers its roots",
+    "Три и по века породичне традиције у справљању врхунских вина. Данас у Доњој Врежини, у Нишу.": "Three and a half centuries of family tradition in making fine wines. Today in Donja Vrežina, Niš.",
+    "Позовите подрум": "Call the cellar",
+    "година породичне традиције у гајењу лозе": "years of family tradition in growing vines",
+    "година рада подрума Виница Грковић": "years of the Vinica Grković cellar",
+    "адитива и вештачких додатака у вину": "additives or artificial ingredients in the wine",
+    "позив до информације о доступности": "call away from knowing what is available",
+    "Осунчане падине": "Sunlit slopes of the",
+    "метохијског виногорја": "Metohija vineyards",
+    "Плодна метохијска земља, уз велико знање и преданост, савршен су спој који за резултат има вина која пружају уживање у свакој капљици.": "The fertile Metohija soil, together with deep knowledge and dedication, is a perfect union whose result is wine that offers enjoyment in every drop.",
+    "Прочитајте целу причу": "Read the full story",
+    "„Преко три века живота у сунчаној Метохији исплела су нераскидиву нит са овим просторима.”": "\"More than three centuries of life in sunny Metohija have woven an unbreakable thread with these lands.\"",
+    "Фамилија Грковић": "The Grković family",
+    "Справљена искључиво од врхунских сорти грожђа. За доступне бербе, паковања и цене позовите нас.": "Made exclusively from top grape varieties. Call us about available vintages, packaging and prices.",
+    "Сорта коју подрум негује из метохијске традиције.": "A variety the cellar nurtures from the Metohija tradition.",
+    "Из подрума у Доњој Врежини, у Нишу.": "From the cellar in Donja Vrežina, Niš.",
+    "Проверите тренутну доступност и паковања.": "Check current availability and packaging.",
+    "Берба": "Harvest",
+    "Од чокота": "From the vine",
+    "до флаше": "to the bottle",
+    "Грожђе се бере ручно и прерађује истог дана. Вино зри у подруму, под сталном контролом, док не буде спремно за флаширање.": "The grapes are picked by hand and processed the same day. The wine matures in the cellar under constant control until it is ready for bottling.",
+    "Подрум": "The cellar",
+    "Доња Врежина,": "Donja Vrežina,",
+    "Ниш": "Niš",
+    "Купујете директно од произвођача. Позовите нас пре доласка и сазнајте шта је тренутно доступно.": "You buy directly from the producer. Call us before visiting to find out what is currently available.",
+    "Тренуци": "Moments",
+    "Погледајте целу галерију": "See the full gallery",
+    "Дођите у подрум": "Visit the cellar",
+    "Адреса": "Address",
+    "Имејл": "Email",
+    "Мреже": "Social",
+    "Инстаграм": "Instagram",
+    "Фејсбук": "Facebook",
+    "Прича": "Story",
+    "Локација": "Location",
+    "Здравица чашом вина у подруму": "A toast with a glass of wine in the cellar",
+    "Вино Винице Грковић уз печење": "Vinica Grković wine with roast meat",
+    "Грозд смедеревке у винограду": "A bunch of Smederevka grapes in the vineyard",
+    "Деца међу чокотима винове лозе у винограду": "Children among the vines in the vineyard",
+    "Берба грожђа у Ораховцу": "Grape harvest in Orahovac",
+    "Инокс танкови у подруму Винице Грковић": "Stainless steel tanks in the Vinica Grković cellar",
+    "Флаша вина Вранац Винице Грковић": "A bottle of Vinica Grković Vranac",
+    "Флаша вина Шардоне Винице Грковић": "A bottle of Vinica Grković Chardonnay",
+    "Детаљ розе вина Винице Грковић": "Detail of Vinica Grković rosé",
+    "Само за пунолетна лица": "For persons of legal age only",
+    "Точење вина из инокс танка у подруму Винице Грковић": "Drawing wine from a stainless steel tank in the Vinica Grković cellar",
+    "Здравица чашом вина у подруму међу танковима": "A toast with a glass of wine in the cellar among the tanks",
+    "Црно грожђе у муљачи током бербе": "Black grapes in the crusher during the harvest",
+    "Мужење грожђа у дворишту подрума током ноћне бербе": "Crushing grapes in the cellar yard during the night harvest",
+    "Лабораторијска анализа вина у подруму Винице Грковић": "Laboratory analysis of wine at the Vinica Grković cellar",
+    "Дегустација вина уз танк у подруму": "Tasting wine beside a tank in the cellar",
+    "Флаша вина међу балонима у подруму, архивска фотографија": "A bottle of wine among demijohns in the cellar, archive photo",
+    "Бакарни казан за печење ракије у подруму": "A copper still for making brandy at the cellar",
+    "Гости у подруму Винице Грковић међу инокс танковима": "Guests in the Vinica Grković cellar among the stainless steel tanks",
+    "Весела атмосфера уз грожђе током бербе": "A cheerful moment with grapes during the harvest",
+    "Црно грожђе у муљачи у подруму Винице Грковић": "Black grapes in the crusher at the Vinica Grković cellar",
+    "Грозд црног грожђа пред мужење у подруму": "A bunch of black grapes before crushing in the cellar",
+    "Ферментација шире од црног грожђа у казану": "Fermentation of black grape must in the vat",
+    "Инокс танкови и корпе са белим грожђем у подруму": "Stainless steel tanks and baskets of white grapes in the cellar",
+    "Грозд смедеревке у винограду": "A bunch of Smederevka grapes in the vineyard",
+    "Осветљена витрина са флашама вина Винице Грковић у подруму": "A lit display case with Vinica Grković wine bottles in the cellar",
+    "Флаша Вранца, црног вина Винице Грковић": "A bottle of Vranac, a Vinica Grković red wine",
+    "Флаша Мерла, црног вина Винице Грковић": "A bottle of Merlot, a Vinica Grković red wine",
+    "Флаша Шардонеа, белог вина Винице Грковић": "A bottle of Chardonnay, a Vinica Grković white wine",
+    "Флаша Вранца Винице Грковић у подруму": "A bottle of Vinica Grković Vranac in the cellar",
+    "Витрина са флашама Вранца из бербе 2002. и признањима": "A display case with bottles of the 2002 Vranac vintage and awards",
+    "Чаша црвеног вина Винице Грковић уз печење": "A glass of Vinica Grković red wine served with roast",
+    "Чаша розе вина Винице Грковић": "A glass of Vinica Grković rosé",
+    "Детаљ чаше розе вина Винице Грковић": "Close-up of a glass of Vinica Grković rosé",
+    "Анђелко Грковић у винограду Винице Грковић": "Anđelko Grković in the Vinica Grković vineyard",
+    "Архивска фотографија бербе грожђа у метохијском винограду": "Archive photo of the grape harvest in a Metohija vineyard",
+    "Црвено вино Винице Грковић се сипа на лозу за Светог Трифуна": "Vinica Grković red wine poured over the vine on St Tryphon\u2019s day",
+    "Анђелко Грковић бере грожђе у винограду": "Anđelko Grković picking grapes in the vineyard",
+    "Диплома за Вранац 2002 са Кошта вина св. Флоријана у Брну": "Diploma for Vranac 2002 from the St Florian wine tasting in Brno",
+    "Резидба винове лозе за Светог Трифуна у снегу": "Pruning the vines on St Tryphon\u2019s day in the snow",
+    "Деца поред реда винове лозе у дворишту подрума": "Children beside a row of vines in the cellar yard",
+    "Берба грожђа у Ораховцу": "Grape harvest in Orahovac",
+    "Путања": "Breadcrumb",
+    "Прича породице Грковић": "The Grković family story",
+    "Три и по века традиције у гајењу винове лозе и справљању вина, од метохијског виногорја до подрума у Нишу.": "Three and a half centuries of tradition in growing vines and making wine, from the Metohija vineyards to the cellar in Niš.",
+    "Порекло породице": "Family origins",
+    "Из Грчке у метохијско виногорје": "From Greece to the Metohija vineyards",
+    "Земља и грожђе": "Soil and grapes",
+    "Осунчане падине и плодна земља": "Sunlit slopes and fertile soil",
+    "Данас": "Today",
+    "Подрум у Нишу, корени у Метохији": "A cellar in Niš, roots in Metohija",
+    "Желите да упознате наша вина? Позовите нас и проверите шта је тренутно доступно.": "Would you like to get to know our wines? Call us and check what is currently available.",
+    "Погледајте галерију": "See the gallery",
+    "Прочитајте целу причу": "Read the full story",
+    "Погледајте целу галерију": "See the full gallery",
+    "Галерија Винице Грковић": "Vinica Grković gallery",
+    "Вина, подрум, виноград и детаљи производње. Кликните на фотографију за увећани приказ.": "Wines, the cellar, the vineyard and details of production. Click a photo for a larger view.",
+    "За информације о доступним винима и паковањима позовите нас директно.": "For information about available wines and packaging, call us directly.",
+    "Прочитајте нашу причу": "Read our story",
+    "Прескочи на садржај": "Skip to content",
+    "Почетна": "Home",
+    "Наша прича": "Our story",
+    "Вина": "Wines",
+    "Галерија": "Gallery",
+    "Утисци": "Reviews",
+    "Контакт": "Contact",
+    "Позовите нас": "Call us",
+    "Позовите": "Call",
+    "Локација": "Location",
+    "Главна навигација": "Main navigation",
+    "Мобилна навигација": "Mobile navigation",
+    "Мобилни мени": "Mobile menu",
+    "Отвори мени": "Open menu",
+    "Затвори мени": "Close menu",
+    "Увод": "Introduction",
+    "Затвори": "Close",
+    "Претходна фотографија": "Previous photo",
+    "Следећа фотографија": "Next photo",
+    "Приказ фотографије": "Photo view",
+    "Виница Грковић лого": "Vinica Grković logo",
+    "Видео из подрума Винице Грковић": "Video from the Vinica Grković cellar",
+    "Локација Винице Грковић на Гугл мапама": "Vinica Grković location on Google Maps",
+    "Породични подрум · Метохија и Ниш": "Family cellar · Metohija and Niš",
+    "Вино са породичним": "Wine with a family",
+    "потписом и традицијом": "signature and tradition",
+    "Три и по века породичне традиције у справљању вина. Погледајте актуелну понуду и контактирајте нас директно за доступност и поручивање.": "Three and a half centuries of family winemaking tradition. See the current selection and contact us directly about availability and orders.",
+    "Погледајте понуду": "See the selection",
+    "Куповина директно од произвођача": "Buy directly from the producer",
+    "О Виници Грковић": "About Vinica Grković",
+    "Породична производња": "Family winemaking",
+    "у срцу Ниша": "in the heart of Niš",
+    "Виница Грковић је породични подрум вина са коренима у метохијском виногорју, а данас у": "Vinica Grković is a family wine cellar with roots in the Metohija vineyards, today based in",
+    "Доњој Врежини у Нишу": "Donja Vrežina, Niš",
+    ". Купујете директно од произвођача, без посредника.": ". You buy directly from the producer, with no middlemen.",
+    "Доступност, паковања и цене потврђујемо телефоном, пре доласка или поручивања.": "We confirm availability, packaging and prices by phone, before you visit or order.",
+    "Прочитајте нашу причу": "Read our story",
+    "Ходник подрума Винице Грковић са храстовим бурадима": "Corridor of the Vinica Grković cellar with oak barrels",
+    "Наша понуда": "Our selection",
+    "Вина из породичног подрума": "Wines from the family cellar",
+    "Вина се справљају искључиво од врхунских сорти грожђа, без адитива и вештачких додатака. За доступне сорте, бербе, паковања и цене контактирајте нас директно.": "Our wines are made exclusively from top grape varieties, with no additives or artificial ingredients. Contact us directly about available varieties, vintages, packaging and prices.",
+    "Погледајте вина": "See the wines",
+    "Поручивање": "Ordering",
+    "Проверите која вина и паковања су тренутно доступни и под којим условима се могу поручити.": "Check which wines and packaging are currently available and on what terms they can be ordered.",
+    "Проверите доступност": "Check availability",
+    "Флаша вина Винице Грковић и чаша црвеног вина": "A bottle of Vinica Grković wine and a glass of red wine",
+    "Буради у подруму Винице Грковић у Нишу": "Barrels in the Vinica Grković cellar in Niš",
+    "Директно од произвођача": "Direct from the producer",
+    "Једноставнији пут до породичног вина": "A simpler path to family wine",
+    "Директан контакт": "Direct contact",
+    "Информације о понуди добијате директно од произвођача.": "You get information about the selection directly from the producer.",
+    "Локална куповина": "Local purchase",
+    "Подрум се налази у Доњој Врежини, у Нишу.": "The cellar is in Donja Vrežina, Niš.",
+    "Актуелна доступност": "Current availability",
+    "Пре доласка можете да проверите која вина и паковања су тренутно доступни.": "Before you visit, you can check which wines and packaging are currently available.",
+    "Договор око поруџбине": "Arranging an order",
+    "За веће количине и посебне потребе пошаљите упит директно.": "For larger quantities and special requests, send us an enquiry directly.",
+    "Како да поручите": "How to order",
+    "Од информације до куповине": "From enquiry to purchase",
+    "у три корака": "in three steps",
+    "Прегледајте доступну понуду вина.": "Browse the available wines.",
+    "Позовите или пошаљите поруку": "Call or send a message",
+    "Проверите доступност, паковања и актуелне цене.": "Check availability, packaging and current prices.",
+    "Договорите преузимање": "Arrange collection",
+    "Договорите термин и начин преузимања директно са подрумом.": "Arrange a time and method of collection directly with the cellar.",
+    "Три и по века": "Three and a half centuries",
+    "породичне традиције": "of family tradition",
+    "Фамилија Грковић је од свог родоначелника, који се на просторе Метохије доселио из Грчке, наследила љубав према гајењу винове лозе и справљању вина.": "From its progenitor, who settled in Metohija from Greece, the Grković family inherited a love of growing vines and making wine.",
+    "Од тих давних времена па све до данас, већ три и по века траје прича о традицији фамилије Грковић у справљању врхунских вина и ракије.": "From those distant times to the present day, the story of the Grković family tradition of making fine wines and brandy has lasted three and a half centuries.",
+    "Осунчане падине метохијског виногорја и плодна метохијска земља, уз велико знање, преданост и љубав према овом пићу Богова, савршен су спој који за резултат има вина која пружају уживање у свакој капљици.": "The sunlit slopes of the Metohija vineyards and the fertile Metohija soil, together with deep knowledge, dedication and love for this drink of the gods, are a perfect union whose result is wine that offers enjoyment in every drop.",
+    "„Виница Грковић” настала на овим темељима и вишевековној традицији већ више од три деценије испунава мисију да кроз своја висококвалитетна вина пружи свима моменте уживања и буде део мноштва лепих тренутака у животима многих породица.": "Founded on these foundations and on centuries of tradition, Vinica Grković has for more than three decades fulfilled its mission: to offer everyone moments of enjoyment through its high-quality wines, and to be part of many beautiful moments in the lives of many families.",
+    "Препознатљивост и особеност „Винице Грковић” су вина справљана икључиво од врхунских сорти грожђа, без адитива и вештачких додатака и представљају плод природе, технологије, љубави и хармоније сједињених у њима, те поред изузетног ужитка пружају и добро знана благотворна дејства на здравље.": "What makes Vinica Grković recognisable and distinctive are wines made exclusively from top grape varieties, without additives or artificial ingredients. They are the fruit of nature, technology, love and harmony united in them, and alongside exceptional enjoyment they also offer the well-known beneficial effects on health.",
+    "Због познатих догађаја 1999. године на Косову и Метохији, „Виница Грковић” је морала да свој рад једним делом премести у Ниш, али ће печат и дух времена и простора са којих је потекла заувек остати сачувани у винима и ракијама.": "Because of the known events of 1999 in Kosovo and Metohija, Vinica Grković had to move part of its work to Niš, but the imprint and spirit of the time and place it came from will remain preserved in its wines and brandies forever.",
+    "Преко три века живота које су генерације фамилије Грковић проживеле у сунчаној Метохији исплела су нераскидиву нит са овим просторима која се као предање чува и негује кроз врхунска вина.": "More than three centuries of life that generations of the Grković family lived in sunny Metohija have woven an unbreakable thread with these lands, kept and nurtured like a legacy through fine wines.",
+    "Погледајте галерију": "See the gallery",
+    "Породична кућа и виноград Винице Грковић у залазак сунца": "The family house and vineyard of Vinica Grković at sunset",
+    "Из подрума": "From the cellar",
+    "Вина, људи и детаљи производње": "Wines, people and details of production",
+    "Флаша вина Винице Грковић и чаша црвеног вина на бурету у сумрак": "A bottle of Vinica Grković wine and a glass of red wine on a barrel at dusk",
+    "Дрвена буради у подруму Винице Грковић у Нишу": "Wooden barrels in the Vinica Grković cellar in Niš",
+    "Гроздови црног грожђа у винограду пред бербу": "Bunches of black grapes in the vineyard before harvest",
+    "Детаљ етикете вина Винице Грковић са називом Породична традиција": "Detail of a Vinica Grković wine label reading Family Tradition",
+    "Чаша црвеног вина на каменом зиду изнад винограда у залазак сунца": "A glass of red wine on a stone wall above the vineyard at sunset",
+    "Ходник подрума Винице Грковић са низом храстових буради": "Corridor of the Vinica Grković cellar with a row of oak barrels",
+    "Вино Винице Грковић уз сир, орахе и грожђе на дрвеној дасци": "Vinica Grković wine with cheese, walnuts and grapes on a wooden board",
+    "Камени улаз у подрум са дрвеном таблом и поруком о вину": "Stone entrance to the cellar with a wooden sign about wine",
+    "Породична кућа и виноград у залазак сунца": "The family house and vineyard at sunset",
+    "Утисци купаца": "Customer reviews",
+    "Утисци наших купаца": "What our customers say",
+    "Куповао сам вино за славу и све је било како смо се договорили. Јавили су ми тачно које су количине доступне и када могу да преузмем.": "I bought wine for a family feast and everything was as agreed. They told me exactly which quantities were available and when I could collect.",
+    "Пријатан контакт и без компликације. Позовеш, питаш шта има, кажу ти отворено и договориш се за долазак у подрум.": "Pleasant contact and no complications. You call, ask what is available, they tell you openly and you arrange a visit to the cellar.",
+    "Узели смо неколико флаша за поклон. Паковање је било лепо урађено, а људи љубазни и стрпљиви кад смо питали за детаље.": "We took a few bottles as a gift. The packaging was nicely done, and the people were kind and patient when we asked for details.",
+    "Гугл рецензија · ПРИМЕР": "Google review · EXAMPLE",
+    "Фејсбук рецензија · ПРИМЕР": "Facebook review · EXAMPLE",
+    "[ПРИМЕР РЕЦЕНЗИЈА — ЗАМЕНИТИ ПРОВЕРЕНИМ ГУГЛ ИЛИ ФЕЈСБУК РЕЦЕНЗИЈАМА ПРЕ ОБЈАВЕ]": "[EXAMPLE REVIEWS — REPLACE WITH VERIFIED GOOGLE OR FACEBOOK REVIEWS BEFORE PUBLISHING]",
+    "Честа питања": "Frequently asked questions",
+    "Информације пре доласка или поручивања": "Information before visiting or ordering",
+    "Где се налази Виница Грковић?": "Where is Vinica Grković?",
+    "Налазимо се у улици Ратка Павловића 124, у Доњој Врежини у Нишу.": "We are at Ratka Pavlovića 124, in Donja Vrežina, Niš.",
+    "Како могу да проверим актуелну понуду?": "How can I check the current selection?",
+    "Позовите нас на +381 64 261 9360 или пошаљите поруку преко Фејсбук или Инстаграм профила.": "Call us on +381 64 261 9360 or send a message via our Facebook or Instagram profile.",
+    "Да ли су доступне веће количине за прославе?": "Are larger quantities available for celebrations?",
+    "[УСЛОВИ ЗА ВЕЋЕ ПОРУЏБИНЕ - ПОТВРДИТИ]": "[TERMS FOR LARGER ORDERS - TO CONFIRM]",
+    "Да ли вршите доставу?": "Do you deliver?",
+    "[ПОДРУЧЈЕ И УСЛОВИ ДОСТАВЕ - ПОТВРДИТИ]": "[DELIVERY AREA AND TERMS - TO CONFIRM]",
+    "Да ли имате поклон-паковања?": "Do you have gift packaging?",
+    "[ВРСТЕ И ЦЕНЕ ПОКЛОН-ПАКОВАЊА - ПОТВРДИТИ]": "[GIFT PACKAGING TYPES AND PRICES - TO CONFIRM]",
+    "Да ли је могућа посета или дегустација?": "Are visits or tastings possible?",
+    "[УСЛОВИ ПОСЕТЕ И ДЕГУСТАЦИЈЕ - ПОТВРДИТИ]": "[VISIT AND TASTING TERMS - TO CONFIRM]",
+    "Немате одговор на своје питање? Позовите нас и добићете тачну информацију о доступности.": "Did not find your answer? Call us and we will tell you exactly what is available.",
+    "Контактирајте нас": "Contact us",
+    "Позовите нас пре доласка и сазнајте која вина, паковања и количине су тренутно доступни.": "Call us before visiting to find out which wines, packaging and quantities are currently available.",
+    "Пишите нам на Инстаграм": "Message us on Instagram",
+    "Не обећавамо доставу ни дегустације док их не потврдимо. Цене и количине добијате директно од нас, телефоном.": "We do not promise delivery or tastings until they are confirmed. You get prices and quantities directly from us, by phone.",
+    "Отворите у Гугл мапама": "Open in Google Maps",
+    "Виница Грковић је породични подрум вина са три и по века традиције, данас у Доњој Врежини у Нишу.": "Vinica Grković is a family wine cellar with three and a half centuries of tradition, today in Donja Vrežina, Niš.",
+    "Навигација": "Navigation",
+    "Виница Грковић. Сва права задржана.": "Vinica Grković. All rights reserved.",
+    "Политика приватности": "Privacy policy",
+    "Политика колачића": "Cookie policy",
+    "Продаја алкохолних пића доступна је само пунолетним лицима.": "Sale of alcoholic beverages is available only to persons of legal age."
+  };
+
+  CYR = { 'а':'a','б':'b','в':'v','г':'g','д':'d','ђ':'đ','е':'e','ж':'ž','з':'z','и':'i','ј':'j','к':'k','л':'l','љ':'lj','м':'m','н':'n','њ':'nj','о':'o','п':'p','р':'r','с':'s','т':'t','ћ':'ć','у':'u','ф':'f','х':'h','ц':'c','ч':'č','џ':'dž','ш':'š','А':'A','Б':'B','В':'V','Г':'G','Д':'D','Ђ':'Đ','Е':'E','Ж':'Ž','З':'Z','И':'I','Ј':'J','К':'K','Л':'L','Љ':'Lj','М':'M','Н':'N','Њ':'Nj','О':'O','П':'P','Р':'R','С':'S','Т':'T','Ћ':'Ć','У':'U','Ф':'F','Х':'H','Ц':'C','Ч':'Č','Џ':'Dž','Ш':'Š' };
+
+  translit(text) {
+    let out = '';
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      const mapped = this.CYR[ch];
+      if (mapped === undefined) { out += ch; continue; }
+      if (mapped.length === 2 && ch === ch.toUpperCase() && this.CYR[ch.toLowerCase()]) {
+        const next = text[i + 1] || '';
+        out += (next && next === next.toUpperCase() && this.CYR[next.toLowerCase()]) ? mapped.toUpperCase() : mapped;
+      } else {
+        out += mapped;
+      }
+    }
+    return out;
+  }
+
+  tr(text, lang) {
+    if (lang === 'cyr') return text;
+    const trimmed = text.trim();
+    if (!trimmed) return text;
+    const lead = text.slice(0, text.indexOf(trimmed[0]));
+    const tail = text.slice(lead.length + trimmed.length);
+    const value = (lang === 'en' && this.EN[trimmed]) ? this.EN[trimmed] : this.translit(trimmed);
+    return lead + value + tail;
+  }
+
+  applyLang = () => {
+    const lang = this.state.lang;
+    if (!this._origText) this._origText = new WeakMap();
+    if (!this._origAttr) this._origAttr = new WeakMap();
+    document.documentElement.lang = lang === 'en' ? 'en' : (lang === 'lat' ? 'sr-Latn' : 'sr-Cyrl');
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => {
+        if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const p = n.parentElement;
+        if (!p) return NodeFilter.FILTER_REJECT;
+        const tag = p.tagName;
+        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+        if (p.closest('[data-nolang]')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(node => {
+      let orig = this._origText.get(node);
+      if (orig === undefined) { orig = node.nodeValue; this._origText.set(node, orig); }
+      const next = this.tr(orig, lang);
+      if (node.nodeValue !== next) node.nodeValue = next;
+    });
+
+    const ATTRS = ['alt', 'aria-label', 'title'];
+    document.querySelectorAll('[alt],[aria-label],[title]').forEach(el => {
+      if (el.closest('[data-nolang]')) return;
+      let store = this._origAttr.get(el);
+      if (!store) { store = {}; this._origAttr.set(el, store); }
+      ATTRS.forEach(a => {
+        if (!el.hasAttribute(a)) return;
+        if (store[a] === undefined) store[a] = el.getAttribute(a);
+        const next = this.tr(store[a], lang);
+        if (el.getAttribute(a) !== next) el.setAttribute(a, next);
+      });
+    });
+
+    document.querySelectorAll('[data-lang]').forEach(b => {
+      const on = b.getAttribute('data-lang') === lang;
+      const dark = !!b.closest('[role="dialog"]');
+      b.style.background = on ? (dark ? 'rgba(244,238,228,0.16)' : '#6E2634') : 'transparent';
+      b.style.color = on ? (dark ? '#fff' : '#fff') : (dark ? '#F4EEE4' : '#262321');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  };
+
+  pickLang = (e) => {
+    const lang = e.currentTarget.getAttribute('data-lang') || 'cyr';
+    try { localStorage.setItem('vg-lang', lang); } catch (err) {}
+    this.setState({ lang });
+  };
+
+  componentDidUpdate() { this.applyLang(); }
+
+  DIPS = [
+    { src: 'assets/vinica-grkovic-diploma-vranac-2002.jpg', alt: 'Диплома за Вранац из 2002. године' },
+    { src: 'assets/vinica-grkovic-diploma-pinot-noir-2003.jpg', alt: 'Диплома за Пино Ноар из 2003. године' }
+  ];
+
+  openDip = (e) => {
+    const i = parseInt(e.currentTarget.getAttribute('data-dip'), 10) || 0;
+    this.setState({ dip: i });
+    document.body.style.overflow = 'hidden';
+    const el = document.querySelector('.vg-dip');
+    if (el) el.classList.add('is-open');
+  };
+  closeDip = () => {
+    this.setState({ dip: -1 });
+    document.body.style.overflow = '';
+    const el = document.querySelector('.vg-dip');
+    if (el) el.classList.remove('is-open');
+  };
+  stopDip = (e) => { e.stopPropagation(); };
+
+  componentDidMount() {
+    this._dipKey = (e) => { if (e.key === 'Escape' && this.state.dip >= 0) this.closeDip(); };
+    window.addEventListener('keydown', this._dipKey);
+    this.applyLang();
+    this._langT = setInterval(this.applyLang, 2500);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('section article, section > div > div, section figure'));
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; el.classList.add('vgm-rise'); });
+    this._io = new IntersectionObserver((ents) => {
+      ents.filter(e => e.isIntersecting).forEach((en, i) => {
+        en.target.style.transitionDelay = (i * 90) + 'ms';
+        en.target.style.opacity = '1';
+        en.target.style.transform = 'none';
+        this._io.unobserve(en.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    els.forEach(el => this._io.observe(el));
+    setTimeout(() => els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }), 2600);
+  }
+  componentWillUnmount() {
+    if (this._dipKey) window.removeEventListener('keydown', this._dipKey);
+    document.body.style.overflow = '';
+    if (this._langT) clearInterval(this._langT);
+    if (this._io) this._io.disconnect();
+  }
+  renderVals() {
+    const d = this.DIPS[this.state.dip] || {};
+    return {
+      pickLang: this.pickLang,
+      openDip: this.openDip,
+      closeDip: this.closeDip,
+      stopDip: this.stopDip,
+      dipBg: d.src ? 'url("' + d.src + '")' : 'none',
+      dipAlt: d.alt || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

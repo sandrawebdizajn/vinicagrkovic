@@ -1,42 +1,41 @@
-# Vinica Grković — prezentacioni sajt
+# Виница Грковић — презентациони сајт
 
-Statični sajt (jedan HTML fajl + folder sa slikama). Nema build koraka i nema zavisnosti.
+Породични подрум вина из Доње Врежине у Нишу. Три и по века породичне традиције.
 
-## Struktura
+## Структура
 
-    index.html      cela stranica (HTML + CSS + JS)
-    images/         sve fotografije, logo i hero video
-    robots.txt
-    sitemap.xml
-    .nojekyll       (potrebno za GitHub Pages)
+```
+index.html         Почетна страна
+nasa-prica.html    Наша прича (историја породице, признања, видео)
+galerija.html      Галерија фотографија
+support.js         Рантајм за рендеровање страна (обавезан)
+assets/            Све фотографије, лого и видео
+sitemap.xml
+robots.txt
+```
 
-## Lokalno pokretanje
+## Покретање локално
 
-Otvorite `index.html` u pregledaču, ili:
+Странице користе `support.js` који се учитава релативно, па их треба сервирати преко HTTP сервера (не `file://`):
 
-    python3 -m http.server 8000
+```bash
+python3 -m http.server 8000
+```
 
-## Objava na GitHub Pages
+Затим отворите http://localhost:8000
 
-1. Napravite repozitorijum i prebacite sadržaj ovog foldera u koren (root).
-2. Settings → Pages → Source: `Deploy from a branch`, branch `main`, folder `/ (root)`.
-3. Sajt će biti dostupan na `https://<korisnik>.github.io/<repo>/`.
+## GitHub Pages
 
-Ako sajt ide na svoj domen, dodajte `CNAME` fajl sa domenom i ispravite `canonical`,
-`og:*` i `url` u JSON-LD u `index.html`.
+1. Пребаците садржај овог фолдера у корен репозиторијума (или у `docs/`).
+2. Settings → Pages → Source: `main` / корен (или `/docs`).
 
-## Šta treba dopuniti pre objave
+## Језици
 
-- `[DOPUNITI AUTENTIČNOM PORODIČNOM PRIČOM, GODINAMA I FOTOGRAFIJAMA]` — sekcija Naša priča
-- `[USLOVI ZA VEĆE PORUDŽBINE - POTVRDITI]`, `[PODRUČJE I USLOVI DOSTAVE - POTVRDITI]`,
-  `[VRSTE I CENE POKLON-PAKOVANJA - POTVRDITI]`, `[USLOVI POSETE I DEGUSTACIJE - POTVRDITI]` — FAQ
-- Recenzije su označene kao `PRIMER` — zamenite proverenim Google/Facebook recenzijama
-- Radno vreme nije prikazano jer nije potvrđeno; kad se potvrdi, dodajte i
-  `openingHoursSpecification` u JSON-LD
-- Linkovi „Politika privatnosti" i „Politika kolačića" vode na `#`
+Сајт је на српском (ћирилица) са преклопником ЋИР / LAT / EN у навигацији. Латиница се генерише аутоматски транслитерацијом, а енглески из речника у логици странице.
 
-## Kontakt podaci u kodu
+## Пре објаве — потврдити
 
-Telefon `+381642619360`, email `vinicagrkovic@gmail.com`,
-adresa `Ratka Pavlovića 124, Donja Vrežina, Niš`.
-Ako se menjaju, promenite ih i u JSON-LD bloku na kraju `index.html`.
+- Радно време подрума
+- Услови за веће поруџбине, доставу, поклон-паковања, посете и дегустације
+- Цене и доступност вина
+- Отворена питања означена су у тексту у угластим заградама
