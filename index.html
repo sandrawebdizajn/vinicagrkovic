@@ -40,6 +40,12 @@
   h1,h2,h3,h4,figcaption,blockquote{text-wrap:balance}
   p,li,dd,summary{text-wrap:pretty}
   .vgm-mob{display:none}
+  @media (max-width:760px){.vgm-hero-img{object-position:82% center !important}
+    .vgm-stats{grid-template-columns:repeat(3,1fr) !important;gap:8px !important;padding:20px 14px !important;text-align:center}
+    .vgm-stats span{max-width:none !important}
+    .vgm-stats>div>span:first-child{font-size:24px !important;margin-bottom:4px !important}
+    .vgm-stat-long{display:none !important}
+    .vgm-stat-short{display:block !important}}
   @media (min-width:700px){.vgm-berba{grid-template-columns:repeat(2,1fr) !important}}
   @media (max-width:1060px){.vgm-desk{display:none !important}.vgm-mob{display:inline-flex}.vgm-bar{display:grid !important}footer{padding-bottom:60px}}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms !important}}
@@ -65,14 +71,37 @@
       </div>
       <a href="tel:+381642619360" class="vgm-cta" style="margin-left:12px;display:inline-flex;align-items:center;gap:8px;background:#6E2634;color:#F4EEE4;padding:12px 24px;border-radius:100px;font-size:15px;font-weight:600;min-height:44px">Позовите нас</a>
     </nav>
-    <a href="tel:+381642619360" class="vgm-mob vgm-cta" style="align-items:center;background:#6E2634;color:#F4EEE4;padding:12px 22px;border-radius:100px;font-size:15px;font-weight:600;min-height:44px">Позовите</a>
+    <button type="button" class="vgm-mob" onClick="{{ openMobile }}" aria-label="Отвори мени" aria-expanded="false" style="align-items:center;justify-content:center;width:46px;height:46px;background:transparent;border:1px solid rgba(38,35,33,0.25);border-radius:100px;cursor:pointer;color:#262321;flex-shrink:0">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
   </div>
 </header>
+
+<div role="dialog" aria-modal="true" aria-label="Мобилни мени" style="position:fixed;top:12px;right:12px;width:min(250px,calc(100vw - 24px));z-index:1500;display:{{ mobileDisplay }};background:#262321;color:#F4EEE4;padding:16px 18px;flex-direction:column;border-radius:14px;max-height:calc(100vh - 24px);overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,0.5)">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#F4EEE4">Виница Грковић</span>
+    <button type="button" onClick="{{ closeMobile }}" aria-label="Затвори мени" style="width:40px;height:40px;background:transparent;border:1px solid rgba(244,238,228,0.25);border-radius:100px;cursor:pointer;color:#F4EEE4;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <nav aria-label="Мобилна навигација" style="display:flex;flex-direction:column">
+    <a href="nasa-prica.html" onClick="{{ closeMobile }}" style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#F4EEE4;padding:9px 0;border-bottom:1px solid rgba(244,238,228,0.12)">Наша прича</a>
+    <a href="#vina" onClick="{{ closeMobile }}" style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#F4EEE4;padding:9px 0;border-bottom:1px solid rgba(244,238,228,0.12)">Вина</a>
+    <a href="galerija.html" onClick="{{ closeMobile }}" style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#F4EEE4;padding:9px 0;border-bottom:1px solid rgba(244,238,228,0.12)">Галерија</a>
+    <a href="#utisci" onClick="{{ closeMobile }}" style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#F4EEE4;padding:9px 0;border-bottom:1px solid rgba(244,238,228,0.12)">Утисци</a>
+    <a href="#kontakt" onClick="{{ closeMobile }}" style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#F4EEE4;padding:9px 0">Контакт</a>
+  </nav>
+  <div data-nolang="" role="group" aria-label="Language" style="display:flex;margin-top:14px;border:1px solid rgba(244,238,228,0.25);border-radius:100px;overflow:hidden">
+    <button type="button" data-lang="cyr" onClick="{{ pickLang }}" style="flex:1;padding:11px 0;min-height:44px;border:0;background:transparent;color:#F4EEE4;font-size:13px;font-weight:600;cursor:pointer">ЋИР</button>
+    <button type="button" data-lang="lat" onClick="{{ pickLang }}" style="flex:1;padding:11px 0;min-height:44px;border:0;border-left:1px solid rgba(244,238,228,0.2);background:transparent;color:#F4EEE4;font-size:13px;font-weight:600;cursor:pointer">LAT</button>
+    <button type="button" data-lang="en" onClick="{{ pickLang }}" style="flex:1;padding:11px 0;min-height:44px;border:0;border-left:1px solid rgba(244,238,228,0.2);background:transparent;color:#F4EEE4;font-size:13px;font-weight:600;cursor:pointer">EN</button>
+  </div>
+</div>
 
 <main id="vrh">
 
   <section aria-label="Увод" style="position:relative;min-height:min(94vh,860px);display:flex;align-items:center;padding-top:clamp(60px,10vh,120px);overflow:hidden">
-    <img src="assets/hero-vinograd-case-vina.png" alt="Две чаше црвеног вина на дрвеном столу изнад винограда" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+    <img class="vgm-hero-img" src="assets/hero-vinograd-case-vina.png" alt="Две чаше црвеног вина на дрвеном столу изнад винограда" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
     <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,35,33,0.62) 0%,rgba(38,35,33,0.42) 32%,rgba(38,35,33,0.9) 100%)"></span>
     <div style="position:relative;max-width:1300px;margin:0 auto;padding:0 clamp(20px,5vw,40px) clamp(48px,7vw,86px);width:100%">
       <span style="display:block;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#E4D5BE;margin-bottom:22px">Породични подрум · Метохија и Ниш</span>
@@ -86,22 +115,18 @@
   </section>
 
   <section aria-label="Три и по века" style="background:#6E2634;color:#FFFFFF">
-    <div style="max-width:1300px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,4vw,44px)">
+    <div class="vgm-stats" style="max-width:1300px;margin:0 auto;padding:clamp(26px,3vw,40px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(20px,3vw,32px)">
       <div>
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);line-height:1;margin-bottom:12px">350</span>
-        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch">година породичне традиције у гајењу лозе</span>
+        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.6vw,46px);line-height:1;margin-bottom:8px">350</span>
+        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch" class="vgm-stat-long">година породичне традиције у гајењу лозе</span><span class="vgm-stat-short" style="font-size:12px;line-height:1.4;color:rgba(255,255,255,0.85);display:none">година традиције</span>
       </div>
       <div>
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);line-height:1;margin-bottom:12px">30+</span>
-        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch">година рада подрума Виница Грковић</span>
+        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.6vw,46px);line-height:1;margin-bottom:8px">30+</span>
+        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch" class="vgm-stat-long">година рада подрума Виница Грковић</span><span class="vgm-stat-short" style="font-size:12px;line-height:1.4;color:rgba(255,255,255,0.85);display:none">година рада</span>
       </div>
       <div>
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);line-height:1;margin-bottom:12px">0</span>
-        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch">адитива и вештачких додатака у вину</span>
-      </div>
-      <div>
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);line-height:1;margin-bottom:12px">1</span>
-        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch">позив до информације о доступности</span>
+        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.6vw,46px);line-height:1;margin-bottom:8px">0</span>
+        <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85);text-wrap:pretty;display:block;max-width:22ch" class="vgm-stat-long">адитива и вештачких додатака у вину</span><span class="vgm-stat-short" style="font-size:12px;line-height:1.4;color:rgba(255,255,255,0.85);display:none">адитива у вину</span>
       </div>
     </div>
   </section>
@@ -409,7 +434,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { lang: (function () { try { return localStorage.getItem('vg-lang') || 'cyr'; } catch (e) { return 'cyr'; } })() };
+  state = { lang: (function () { try { return localStorage.getItem('vg-lang') || 'cyr'; } catch (e) { return 'cyr'; } })(), mobileOpen: false };
+
+  openMobile = () => { this.setState({ mobileOpen: true }); document.body.style.overflow = 'hidden'; };
+  closeMobile = () => { this.setState({ mobileOpen: false }); document.body.style.overflow = ''; };
 
   EN = {
     "Плод природе": "The fruit of nature",
@@ -427,6 +455,10 @@ class Component extends DCLogic {
     "Три и по века породичне традиције у справљању врхунских вина. Данас у Доњој Врежини, у Нишу.": "Three and a half centuries of family tradition in making fine wines. Today in Donja Vrežina, Niš.",
     "Позовите подрум": "Call the cellar",
     "година породичне традиције у гајењу лозе": "years of family tradition in growing vines",
+    "година традиције": "years of tradition",
+    "година рада": "years of the cellar",
+    "адитива у вину": "additives in the wine",
+    "позив до одговора": "call for an answer",
     "година рада подрума Виница Грковић": "years of the Vinica Grković cellar",
     "адитива и вештачких додатака у вину": "additives or artificial ingredients in the wine",
     "позив до информације о доступности": "call away from knowing what is available",
@@ -782,7 +814,14 @@ class Component extends DCLogic {
     if (this._langT) clearInterval(this._langT);
     if (this._io) this._io.disconnect();
   }
-  renderVals() { return { pickLang: this.pickLang }; }
+  renderVals() {
+    return {
+      pickLang: this.pickLang,
+      openMobile: this.openMobile,
+      closeMobile: this.closeMobile,
+      mobileDisplay: this.state.mobileOpen ? 'flex' : 'none'
+    };
+  }
 }
 </script>
 </body>
